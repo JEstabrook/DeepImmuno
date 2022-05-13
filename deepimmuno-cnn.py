@@ -4,7 +4,8 @@
 Program to run deepimmuno-cnn
 '''
 
-
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 import tensorflow as tf
 import tensorflow.keras as keras
 from tensorflow.keras import layers
@@ -80,6 +81,7 @@ def aaindex(peptide,after_pca):
     encoded = np.empty([len(peptide), 12])  # (seq_len,12)
     for i in range(len(peptide)):
         query = peptide[i]
+        print(query)
         if query == 'X': query = '-'
         query = query.upper()
         encoded[i, :] = matrix[:, amino.index(query)]
