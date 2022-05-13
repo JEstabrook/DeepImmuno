@@ -1,0 +1,23 @@
+{
+    "__default__" :
+    {
+        "t" : "35:00:00",
+        "N" : 1,
+        "partition" : "exacloud",
+        "J" : "{rule}.{wildcards}",
+        "o" : "logs/__default__/{rule}__%j.out",
+        "e" : "logs/__default__/{rule}__%j.err",
+        "c" : 1,
+        "mem" : "50gb",
+        "qos" : "normal"
+    },
+    "run_deepimmuno" :
+    {
+        "J" : "run_deepimmuno",
+        "e" : "logs/run_deepimmuno/%j.err",
+        "o" : "logs/run_deepimmuno/%j.out",
+        "c" : 1,
+        "t" : "36:00:00",
+        "mem" : "50gb"
+    }
+}
